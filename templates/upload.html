@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Motion Tracker</title>
+    <script>
+        function uploadFile() {
+            const fileInput = document.getElementById("file");
+            const progressBar = document.getElementById("progress-bar");
+            const progressContainer = document.getElementById("progress-container");
+            const result = document.getElementById("result");
+            const statusText = document.getElementById("status-text");
+
+            if (fileInput.files.length === 0) {
+                alert("Please select a file first!");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append("file", file);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/upload", true);
+
+            progressContainer.style.display = "block";
+            progressBar.style.width = "0%";
+            progressBar.innerText = "0%";
+            statusText.innerText = "Uploading...";
+
+            xhr.upload.onprogress = function (event) {
+                if (event.lengthComputable) {
+                    const percent = (event.loaded / event.total) * 100;
+                    progressBar.style.width = percent + "%";
+                    progressBar.innerText = Math.round(percent) + "%";
+                }
+            };
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    statusText.innerText = "Processing...";
+                    checkProcessingStatus();
+                } else {
+                    alert("Error uploading file");
+                }
+            };
+
+            xhr.send(formData);
+        }
+
+        function checkProcessingStatus() {
+            fetch("/processing-status")
+                .then(response => response.json())
+                .then(data => {
+                    const progressBar = document.getElementById("progress-bar");
+                    const statusText = document.getElementById("status-text");
+                    const result = document.getElementById("result");
+
+                    progressBar.style.width = data.progress + "%";
+                    progressBar.innerText = data.progress + "%";
+
+                    if (data.progress < 100) {
+                        setTimeout(checkProcessingStatus, 1000);
+                    } else {
+                        progressBar.style.width = "100%";
+                        progressBar.innerText = "Processing Complete!";
+                        statusText.innerText = "Processing finished!";
+                        result.innerHTML = `<a href='/download/${data.filename}'>Download Processed Video</a> | 
+                                            <a href='/download-report/${data.filename}'>Download Report</a>`;
+                    }
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Upload Video for Motion Detection</h2>
+    <input type="file" id="file" accept="video/*">
+    <button onclick="uploadFile()">Upload</button>
+
+    <div id="progress-container">
+        <div id="progress-bar">0%</div>
+    </div>
+
+    <p id="status-text"></p>
+
+    <div id="result"></div>
+</body>
+
+</html>

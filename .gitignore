@@ -1,0 +1,5 @@
+# Bỏ qua thư mục môi trường ảo
+venv/
+
+# Bỏ qua file hệ thống của macOS
+.DS_Store
