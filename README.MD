@@ -12,7 +12,16 @@ Dự án này sử dụng **YOLOv8 (`ultralytics`)** để **nhận diện con n
 ```bash
 python --version
 
-
 python3 -m venv venv
 source venv/bin/activate  # (Trên macOS/Linux)
 venv\Scripts\activate  # (Trên Windows)
+
+
+Yêu cầu thư viện & phiên bản
+📦 Thư viện	🏷 Phiên bản yêu cầu
+ultralytics	>=8.0.0
+torch	>=1.8.0, <2.0.0
+flask	>=2.0.0
+opencv-python	>=4.5.0
+numpy	1.26.4
+tqdm	>=4.64.0
