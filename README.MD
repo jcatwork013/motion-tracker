@@ -16,3 +16,7 @@ python --version
 python3 -m venv venv
 source venv/bin/activate  # (Trên macOS/Linux)
 venv\Scripts\activate  # (Trên Windows)
+
+python app.py
+
+http://127.0.0.1:5000

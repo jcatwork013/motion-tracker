@@ -1,0 +1,46 @@
+=== BÁO CÁO GIÁM SÁT ===
+Tổng số frame: 930
+Tổng số người phát hiện: 7
+Số người tối đa xuất hiện đồng thời: 1
+
+Thời gian xuất hiện của các đối tượng:
+  - Track ID: 27.0, Xuất hiện lúc: 00:16
+  - Track ID: 27.0, Xuất hiện lúc: 00:16
+  - Track ID: 27.0, Xuất hiện lúc: 00:16
+  - Track ID: 27.0, Xuất hiện lúc: 00:16
+  - Track ID: 27.0, Xuất hiện lúc: 00:16
+  - Track ID: 34.0, Xuất hiện lúc: 00:23
+  - Track ID: 34.0, Xuất hiện lúc: 00:23
+
+Số người xuất hiện theo từng giây:
+  - 0 giây: 0 người
+  - 1 giây: 0 người
+  - 2 giây: 0 người
+  - 3 giây: 0 người
+  - 4 giây: 0 người
+  - 5 giây: 0 người
+  - 6 giây: 0 người
+  - 7 giây: 0 người
+  - 8 giây: 0 người
+  - 9 giây: 0 người
+  - 10 giây: 0 người
+  - 11 giây: 0 người
+  - 12 giây: 0 người
+  - 13 giây: 0 người
+  - 14 giây: 0 người
+  - 15 giây: 0 người
+  - 16 giây: 0 người
+  - 17 giây: 0 người
+  - 18 giây: 0 người
+  - 19 giây: 0 người
+  - 20 giây: 0 người
+  - 21 giây: 0 người
+  - 22 giây: 0 người
+  - 23 giây: 0 người
+  - 24 giây: 0 người
+  - 25 giây: 0 người
+  - 26 giây: 0 người
+  - 27 giây: 0 người
+  - 28 giây: 0 người
+  - 29 giây: 0 người
+  - 30 giây: 0 người
